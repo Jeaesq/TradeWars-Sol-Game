@@ -1,0 +1,39 @@
+{
+  "cards": [
+    {
+      "id": "metal_shipment",
+      "type": "resource",
+      "name": "Metal Shipment",
+      "effect": {
+        "gain_resource": "metal",
+        "amount": 2
+      }
+    },
+    {
+      "id": "fuel_reserve",
+      "type": "resource",
+      "name": "Fuel Reserve",
+      "effect": {
+        "gain_resource": "fuel",
+        "amount": 2
+      }
+    },
+    {
+      "id": "sabotage",
+      "type": "event",
+      "name": "Sabotage",
+      "effect": {
+        "target": "enemy_station",
+        "disable_turns": 1
+      }
+    },
+    {
+      "id": "market_boom",
+      "type": "event",
+      "name": "Market Boom",
+      "effect": {
+        "bonus_income": 3
+      }
+    }
+  ]
+}
