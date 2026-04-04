@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    { "id": "earth", "type": "planet" },
+    { "id": "mars", "type": "planet" },
+    { "id": "luna", "type": "moon" },
+    { "id": "ceres", "type": "asteroid" },
+    { "id": "jupiter", "type": "planet" },
+    { "id": "europa", "type": "moon" },
+    { "id": "saturn", "type": "planet" },
+    { "id": "titan", "type": "moon" }
+  ],
+  "routes": [
+    { "from": "earth", "to": "luna" },
+    { "from": "earth", "to": "mars" },
+    { "from": "mars", "to": "ceres" },
+    { "from": "ceres", "to": "jupiter" },
+    { "from": "jupiter", "to": "europa" },
+    { "from": "jupiter", "to": "saturn" },
+    { "from": "saturn", "to": "titan" }
+  ]
+}
