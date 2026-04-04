@@ -1,0 +1,7 @@
+{
+  "build": {
+    "fleet": { "credits": 4, "metal": 1 },
+    "colony": { "credits": 3 },
+    "station": { "credits": 5, "metal": 1 }
+  }
+}

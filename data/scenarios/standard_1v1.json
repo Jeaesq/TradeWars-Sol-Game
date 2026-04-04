@@ -1,0 +1,14 @@
+{
+  "id": "standard_1v1",
+  "name": "Standard Duel",
+  "players": [
+    { "id": "P1", "name": "Commander One", "bot": false, "startNode": "earth" },
+    { "id": "P2", "name": "Commander Two", "bot": true, "startNode": "mars" }
+  ],
+  "startingFleets": [
+    { "ownerId": "P1", "nodeId": "earth", "attack": 2, "defense": 2, "movement": 2 },
+    { "ownerId": "P2", "nodeId": "mars", "attack": 2, "defense": 2, "movement": 2 }
+  ],
+  "roundLimit": 20,
+  "startingHandSize": 3
+}
