@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadContentBundleFromFs } from '../../content/loaders.node.js';
+import { loadContentBundleFromFs } from '../../content/loaders.js';
 import { createInitialState } from '../../engine/gameState.js';
 import { collectIncome } from '../../engine/economy.js';
 import { buildAtNode } from '../../engine/build.js';
