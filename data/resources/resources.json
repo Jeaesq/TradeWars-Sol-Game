@@ -1,0 +1,8 @@
+{
+  "resources": ["credits", "metal", "fuel"],
+  "starting": {
+    "credits": 6,
+    "metal": 1,
+    "fuel": 1
+  }
+}

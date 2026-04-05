@@ -1,0 +1,16 @@
+{
+  "income": {
+    "base": 2,
+    "nodeType": {
+      "planet": 2,
+      "moon": 1,
+      "space_station": 2,
+      "trade_hub": 2,
+      "shipyard": 1,
+      "mining_site": 1,
+      "research_station": 1,
+      "asteroid": 1
+    },
+    "tradeRoute": 2
+  }
+}

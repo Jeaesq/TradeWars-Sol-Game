@@ -1,32 +1,54 @@
 # Trade Wars: Sol
 
-Trade Wars: Sol is a turn-based two-player strategy game set in a colonized Solar System. Players compete for victory points by controlling colonies, stations, and trade routes, while using fleets and cards to disrupt one another.
+Trade Wars: Sol is a turn-based two-player strategy game set in a colonized Solar System. This repository includes a local-first, data-driven v1 scaffold with a pure rules engine and browser UI.
 
-This repository starts with:
-- a concise game spec in `docs/GAME_SPEC.md`
-- repo instructions for Codex in `AGENTS.md`
-- modular, data-driven starter content in `data/`
+## v1 architecture
 
-## Initial design goals
-- Quick playable core
-- Strong solo support via a bot opponent
-- Data-driven content so cards, map nodes, routes, resources, and scenarios can evolve without rewriting the UI
-- Clean separation between game engine, content, and presentation
+- `data/`: cards, resources, map, rules, scenarios (JSON)
+- `src/content/`: loaders + validators for content files
+- `src/engine/`: deterministic game systems (turns, movement, combat, economy, build, cards, scoring)
+- `src/bot/`: solo bot heuristic action selector
+- `src/ui/`: local-first browser app with autosave
+- `src/tests/`: content/engine/bot tests
 
-## Planned v1
-- Fixed Solar System duel map
-- Two-player hotseat play
-- Solo play against a basic bot
-- Fleets, colonies, stations, and trade routes
-- Turn-based income, movement, combat, building, and scoring
-- Small starter card set
+## Run locally
 
-## Suggested future structure
-- `docs/` for rules and roadmap
-- `data/` for cards, map, rules, and scenarios
-- `src/engine/` for core game logic
-- `src/content/` for loaders and validation
-- `src/ui/` for interface components
+```bash
+npm test
+npm start
+# then open http://localhost:8080
+```
 
-## Next step for Codex
-Codex should read `AGENTS.md` and `docs/GAME_SPEC.md`, propose an implementation plan for v1, and then scaffold a local-first web app with a pure rules engine and data-driven content loading.
+## Deploy to Cloud Run / source-repo pipelines
+
+This repo includes deployment files for both buildpack-style and Docker builds:
+
+- `server.js` listens on `PORT` and serves static app/data assets.
+- `Dockerfile` builds a production container image.
+- `Procfile` declares start command for source/buildpack workflows.
+- `cloudbuild.yaml` supports explicit Cloud Build Docker image creation.
+- `.gcloudignore` keeps source upload smaller and cleaner.
+
+Example source deploy:
+
+```bash
+gcloud run deploy tradewars-sol \
+  --source . \
+  --region us-west1 \
+  --allow-unauthenticated
+```
+
+Example Docker deploy:
+
+```bash
+gcloud builds submit --config cloudbuild.yaml --substitutions _IMAGE=us-west1-docker.pkg.dev/$PROJECT_ID/tradewars-sol/tradewars-sol:manual
+
+gcloud run deploy tradewars-sol \
+  --image us-west1-docker.pkg.dev/$PROJECT_ID/tradewars-sol/tradewars-sol:manual \
+  --region us-west1 \
+  --allow-unauthenticated
+```
+
+If repository-connected deploys fail with
+`developerconnect.gitRepositoryLinks.fetchReadToken`,
+that is an IAM/Developer Connect permission issue before build starts.
