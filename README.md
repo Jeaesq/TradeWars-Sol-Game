@@ -15,29 +15,9 @@ Trade Wars: Sol is a turn-based two-player strategy game set in a colonized Sola
 
 ```bash
 npm test
-npm start
-# then open http://localhost:8080
+npm run start
+# then open http://localhost:4173
 ```
-
-## Deploy to Google Cloud Run
-
-This repository now includes Cloud Run-ready defaults:
-- `server.js` listens on `PORT` and serves static app/data assets.
-- `Dockerfile` builds a production image.
-
-Example deploy (Dockerfile path):
-
-```bash
-gcloud run deploy tradewars-sol \
-  --source . \
-  --region us-west1 \
-  --allow-unauthenticated
-```
-
-If you deploy from a connected repository and see:
-`developerconnect.gitRepositoryLinks.fetchReadToken` permission denied,
-that is an IAM/Developer Connect configuration issue before build steps run.
-Grant the calling service account permission on the Developer Connect repository link/connection and rerun.
 
 ## Current status
 
