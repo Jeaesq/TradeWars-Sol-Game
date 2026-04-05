@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadContentBundleFromFs } from '../../content/loaders.node.js';
+import { loadContentBundleFromFs } from '../../content/loaders.js';
 import { validateBundle } from '../../content/validators.js';
 
 test('content bundle validates', () => {

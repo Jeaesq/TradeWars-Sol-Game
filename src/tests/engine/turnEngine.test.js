@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadContentBundleFromFs } from '../../content/loaders.node.js';
+import { loadContentBundleFromFs } from '../../content/loaders.js';
 import { createInitialState, getCurrentPhase } from '../../engine/gameState.js';
 import { runPhaseStart, nextPhase } from '../../engine/turnEngine.js';
 

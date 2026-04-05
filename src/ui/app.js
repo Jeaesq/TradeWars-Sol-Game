@@ -1,4 +1,4 @@
-import { loadContentBundleInBrowser } from '../content/loaders.browser.js';
+import { loadContentBundleInBrowser } from '../content/loaders.js';
 import { validateBundle } from '../content/validators.js';
 import { createInitialState, getActivePlayer, getCurrentPhase } from '../engine/gameState.js';
 import { applyAction } from '../engine/reducer.js';

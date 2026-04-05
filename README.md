@@ -15,40 +15,18 @@ Trade Wars: Sol is a turn-based two-player strategy game set in a colonized Sola
 
 ```bash
 npm test
-npm start
-# then open http://localhost:8080
+npm run start
+# then open http://localhost:4173
 ```
 
-## Deploy to Cloud Run / source-repo pipelines
+## Current status
 
-This repo includes deployment files for both buildpack-style and Docker builds:
-
-- `server.js` listens on `PORT` and serves static app/data assets.
-- `Dockerfile` builds a production container image.
-- `Procfile` declares start command for source/buildpack workflows.
-- `cloudbuild.yaml` supports explicit Cloud Build Docker image creation.
-- `.gcloudignore` keeps source upload smaller and cleaner.
-
-Example source deploy:
-
-```bash
-gcloud run deploy tradewars-sol \
-  --source . \
-  --region us-west1 \
-  --allow-unauthenticated
-```
-
-Example Docker deploy:
-
-```bash
-gcloud builds submit --config cloudbuild.yaml --substitutions _IMAGE=us-west1-docker.pkg.dev/$PROJECT_ID/tradewars-sol/tradewars-sol:manual
-
-gcloud run deploy tradewars-sol \
-  --image us-west1-docker.pkg.dev/$PROJECT_ID/tradewars-sol/tradewars-sol:manual \
-  --region us-west1 \
-  --allow-unauthenticated
-```
-
-If repository-connected deploys fail with
-`developerconnect.gitRepositoryLinks.fetchReadToken`,
-that is an IAM/Developer Connect permission issue before build starts.
+Implemented v1 systems:
+- Game state model
+- Turn engine and phase enforcement
+- Movement and combat
+- Ownership and trade routes
+- Income and build rules
+- Card play flow
+- Solo bot opponent
+- Basic map/action UI with local save
