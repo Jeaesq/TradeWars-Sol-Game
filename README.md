@@ -1,6 +1,6 @@
 # Trade Wars: Sol
 
-Trade Wars: Sol is a turn-based two-player strategy game set in a colonized Solar System. This repository now includes a local-first, data-driven v1 scaffold with a pure rules engine and browser UI.
+Trade Wars: Sol is a turn-based two-player strategy game set in a colonized Solar System. This repository includes a local-first, data-driven v1 scaffold with a pure rules engine and browser UI.
 
 ## v1 architecture
 
