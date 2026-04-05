@@ -1,0 +1,8 @@
+{
+  "victory": {
+    "vpToWin": 20,
+    "vpPerNode": 1,
+    "vpPerTradeRoute": 1,
+    "vpPerDestroyedFleet": 1
+  }
+}
